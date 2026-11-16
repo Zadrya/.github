@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
-# The same commands run locally and in CI: every CI job calls a target here.
+# Local parity: the lint, test, licenses, authorship and commitlint jobs in CI
+# call these targets. CodeQL, Scorecard and dependency review only run in CI.
 
 SHELL := bash
 .DEFAULT_GOAL := help
@@ -44,4 +45,5 @@ commitlint-message: ## Check one commit message file (FILE=path), used by the co
 	$(COMMITLINT) --edit $(FILE)
 
 commitlint-title: ## Check the pull request title in the PR_TITLE environment variable
+	@[[ -n "$$PR_TITLE" ]] || { echo "error: PR_TITLE is empty" >&2; exit 1; }
 	@printf '%s\n' "$$PR_TITLE" | $(COMMITLINT) --verbose
