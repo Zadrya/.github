@@ -1,5 +1,14 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Conventional commits. Rules are inline so no shared config package is needed.
+# Conventional commits. Rules and parser are inline so no shared config package
+# is needed. Nothing is ignored: merge, revert, fixup and squash messages must
+# be conventional too.
+defaultIgnores: false
+parserPreset:
+  parserOpts:
+    headerPattern: '^(\w*)(?:\((.*)\))?!?: (.*)$'
+    breakingHeaderPattern: '^(\w*)(?:\((.*)\))?!: (.*)$'
+    headerCorrespondence: [type, scope, subject]
+    noteKeywords: ["BREAKING CHANGE", "BREAKING-CHANGE"]
 rules:
   type-enum:
     - 2
