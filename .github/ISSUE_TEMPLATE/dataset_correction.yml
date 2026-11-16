@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+name: Dataset correction
+description: A dose, duration, interaction or other substance data is wrong
+labels: [dataset]
+body:
+  - type: input
+    id: substance
+    attributes:
+      label: Substance
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What is wrong and what it should be
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: A link to PsychonautWiki or another reliable source.
+    validations:
+      required: true
