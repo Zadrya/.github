@@ -16,10 +16,11 @@ Thank you for your interest. Zadrya is a small project with strict rules about p
 
 ## How to work
 
-1. Create a branch named `feature/<description>` or `fix/<description>`.
-2. Make small commits: one logical change each, with a [conventional commit](https://www.conventionalcommits.org) message in English.
-3. Run `make check` before every commit and `make ci` before opening the pull request.
-4. Open one pull request per functional slice, ideally under 400 lines of diff. Pull requests are merged by rebase.
+1. Run `make setup` once per clone to install the git hooks.
+2. Create a branch named `feature/<description>` or `fix/<description>`.
+3. Make small commits: one logical change each, with a [conventional commit](https://www.conventionalcommits.org) message in English.
+4. Run `make check` before every commit and `make ci` before opening the pull request.
+5. Open one pull request per functional slice, ideally under 400 lines of diff. Pull requests are merged by rebase.
 
 ## Commit authorship
 
