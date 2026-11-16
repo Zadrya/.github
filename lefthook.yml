@@ -10,6 +10,8 @@ commit-msg:
   commands:
     attribution:
       run: scripts/check-attribution.sh {1}
+    no-em-dash:
+      run: scripts/check-no-em-dash.sh {1}
     commitlint:
       run: make commitlint-message FILE={1}
 
@@ -17,3 +19,4 @@ pre-push:
   commands:
     protect-main-and-authorship:
       run: scripts/pre-push.sh
+      use_stdin: true
